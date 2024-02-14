@@ -1,0 +1,20 @@
+{%extends 'base.html'%} {%block blogactive%}active{%endblock blogactive%}
+{%block body%}
+<div class="container my-3">
+  <h1>WELCOME TO CODERS HUB</h1>
+  <div>
+    {%for blog in blogs%}
+    <div class="card" style="width: 50rem">
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="/blogpost/{{blog.slug}}">{{blog.title}}</a>
+        </h5>
+        <p class="card-text">{{blog.content|slice:200}}</p>
+        <a href="/blogpost/{{blog.slug}}" class="btn btn-primary">Read more</a>
+      </div>
+    </div>
+    <br />
+    {%endfor%}
+  </div>
+</div>
+{%endblock body%}
